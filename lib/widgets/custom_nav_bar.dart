@@ -2,7 +2,6 @@ import 'package:bottom_navigation_hold_states/core/constants/tab_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 /// This widget just makes bottom navigation bar show and controls which tab tapped
 class CustomBottomNavigation extends StatelessWidget {
   final TabItem currentTab;
@@ -11,7 +10,11 @@ class CustomBottomNavigation extends StatelessWidget {
   final Map<TabItem, GlobalKey<NavigatorState>> navigatorKeys;
 
   const CustomBottomNavigation(
-      {Key? key, required this.currentTab, required this.onSelectedTab, required this.pageCreator, required this.navigatorKeys})
+      {Key? key,
+      required this.currentTab,
+      required this.onSelectedTab,
+      required this.pageCreator,
+      required this.navigatorKeys})
       : super(key: key);
 
   @override
@@ -39,6 +42,9 @@ class CustomBottomNavigation extends StatelessWidget {
     final TabItemData? currentTabData = TabItemData.allTabs[tabItem];
 
     return BottomNavigationBarItem(
-        icon: Icon(currentTabData!.icon), label: currentTabData.title);
+      icon: Icon(currentTabData!.icon),
+      label: currentTabData!.title,
+
+    );
   }
 }

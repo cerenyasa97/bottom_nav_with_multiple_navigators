@@ -11,10 +11,24 @@ class ProfilePage extends StatelessWidget {
         actions: [
           TextButton(onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => ExamplePage1()));
-          }, child: Text("Navigate", style: TextStyle(color: Colors.white, fontSize: 18),))
+          }, child: Text("Favourites", style: TextStyle(color: Colors.white, fontSize: 18),))
         ],
       ),
-      body: Center(child: Text("Profile page"),),
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              child: CircleAvatar(
+                radius: 80,
+                child: Text("CY", style: TextStyle(fontSize: 60),),
+              ),
+            ),
+            Flexible(child: ListTile(title: Text("Name Surname"), subtitle: Text("Ceren Yaşa"),)),
+            Flexible(child: ListTile(title: Text("Job Description"), subtitle: Text("Mobile Application Developer"),)),
+            Flexible(child: ListTile(title: Text("Education"), subtitle: Text("Eskişehir Osmangazi University - Electrical Electronics Engineering"),)),
+          ],
+        ),
+      )
     );
   }
 }

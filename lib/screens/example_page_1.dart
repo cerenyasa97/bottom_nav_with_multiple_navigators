@@ -6,7 +6,7 @@ class ExamplePage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Example Page 1"),
+        title: Text("Favourites Page"),
         actions: [
           TextButton(
               onPressed: () {
@@ -16,14 +16,17 @@ class ExamplePage1 extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => ExamplePage2()));
               },
               child: Text(
-                "Navigate",
+                "Items",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ))
         ],
       ),
-      body: Center(
-        child: Text("Example page 1"),
-      ),
+      body: Padding(
+        padding: EdgeInsets.all(40),
+        child: Center(
+          child: Text("There is nothing to shown. Please add your favourite items and then check again.", style: TextStyle(fontSize: 20), textAlign: TextAlign.center,),
+        ),
+      )
     );
   }
 }
